@@ -1,0 +1,5 @@
+- args:
+    sql:
+      ALTER TABLE "public"."multiple_question" ADD COLUMN "multiple_question_id"
+      integer NOT NULL UNIQUE
+  type: run_sql

@@ -1,0 +1,8 @@
+- args:
+    name: student_produced_response_type
+    table:
+      name: answer_choice
+      schema: public
+    using:
+      foreign_key_constraint_on: student_produced_response_type_id
+  type: create_object_relationship

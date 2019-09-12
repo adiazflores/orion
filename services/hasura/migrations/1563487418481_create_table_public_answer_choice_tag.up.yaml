@@ -1,0 +1,9 @@
+- args:
+    sql:
+      CREATE TABLE "public"."answer_choice_tag"("answer_id" integer NOT NULL, "tag_id"
+      integer NOT NULL, PRIMARY KEY ("answer_id","tag_id") );
+  type: run_sql
+- args:
+    name: answer_choice_tag
+    schema: public
+  type: add_existing_table_or_view

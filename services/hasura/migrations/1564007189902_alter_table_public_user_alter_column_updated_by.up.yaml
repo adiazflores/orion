@@ -1,0 +1,9 @@
+- args:
+    sql: ALTER TABLE "public"."user" ALTER COLUMN "updated_by" TYPE int4;
+  type: run_sql
+- args:
+    sql: COMMENT ON COLUMN "public"."user"."updated_by" IS ''
+  type: run_sql
+- args:
+    sql: alter table "public"."user" rename column "updated_by" to "last_updated_by";
+  type: run_sql

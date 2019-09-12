@@ -1,0 +1,5 @@
+- args:
+    sql:
+      "\n          alter table \"public\".\"tag\" drop constraint \"tag_content_type_id_fkey\"\n
+      \     "
+  type: run_sql

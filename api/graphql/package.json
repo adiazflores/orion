@@ -1,0 +1,50 @@
+{
+  "name": "@orionmono/orion-graphql-api",
+  "version": "0.1.0",
+  "description": "Orion API",
+  "main": "index.js",
+  "author": "Supergroup <dev@supergroup.co>",
+  "license": "ISC",
+  "private": true,
+  "scripts": {
+    "build": "babel src --out-dir dist",
+    "test": "jest",
+    "start": "yarn build && node dist/index.js",
+    "dev": "nodemon -e gql,js,json --exec babel-node src/index.js",
+    "predev": "rimraf dist && npm run build"
+  },
+  "dependencies": {
+    "apollo-server": "^2.6.7",
+    "dotenv": "^8.0.0",
+    "graphql": "^14.4.0",
+    "graphql-tools": "^4.0.5",
+    "superagent": "^5.1.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/node": "^7.4.5",
+    "@babel/plugin-proposal-class-properties": "^7.4.4",
+    "@babel/plugin-proposal-object-rest-spread": "^7.4.4",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/runtime": "^7.5.5",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^10.0.2",
+    "babel-preset-airbnb": "^4.0.1",
+    "bcryptjs": "^2.4.3",
+    "eslint": "^6.0.1",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-friendly-formatter": "^4.0.1",
+    "eslint-plugin-import": "^2.18.0",
+    "eslint-plugin-jest": "^22.7.1",
+    "eslint-plugin-node": "^9.1.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "jest": "^24.8.0",
+    "jsonwebtoken": "^8.5.1",
+    "nodemon": "^1.19.1",
+    "rimraf": "^2.6.3"
+  }
+}

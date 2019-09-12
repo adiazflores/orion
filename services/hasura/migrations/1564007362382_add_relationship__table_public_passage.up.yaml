@@ -1,0 +1,12 @@
+- args:
+    name: passage_multiple_questions
+    table:
+      name: passage
+      schema: public
+    using:
+      foreign_key_constraint_on:
+        column: passage_id
+        table:
+          name: passage_multiple_question
+          schema: public
+  type: create_array_relationship

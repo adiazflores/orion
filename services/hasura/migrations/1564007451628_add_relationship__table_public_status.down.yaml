@@ -1,0 +1,6 @@
+- args:
+    relationship: drills
+    table:
+      name: status
+      schema: public
+  type: drop_relationship

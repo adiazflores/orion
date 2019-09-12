@@ -1,0 +1,9 @@
+- args:
+    sql:
+      CREATE TABLE "public"."answer_stats"("id" serial NOT NULL, "total_clicks"
+      integer NOT NULL DEFAULT 0, PRIMARY KEY ("id") );
+  type: run_sql
+- args:
+    name: answer_stats
+    schema: public
+  type: add_existing_table_or_view

@@ -1,0 +1,12 @@
+- args:
+    sql:
+      CREATE TABLE "public"."question_tag"("question_id" integer NOT NULL, "tag_id"
+      integer NOT NULL, PRIMARY KEY ("question_id","tag_id") , FOREIGN KEY ("question_id")
+      REFERENCES "public"."question"("question_id") ON UPDATE restrict ON DELETE restrict,
+      FOREIGN KEY ("tag_id") REFERENCES "public"."tag"("tag_id") ON UPDATE restrict
+      ON DELETE restrict);
+  type: run_sql
+- args:
+    name: question_tag
+    schema: public
+  type: add_existing_table_or_view

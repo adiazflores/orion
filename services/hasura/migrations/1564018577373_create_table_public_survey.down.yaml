@@ -1,0 +1,3 @@
+- args:
+    sql: DROP TABLE "public"."survey"
+  type: run_sql

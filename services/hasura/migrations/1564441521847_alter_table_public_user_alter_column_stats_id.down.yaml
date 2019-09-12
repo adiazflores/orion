@@ -1,0 +1,9 @@
+- args:
+    sql: ALTER TABLE "public"."user" ALTER COLUMN "stats_id" TYPE integer;
+  type: run_sql
+- args:
+    sql: ALTER TABLE "public"."user" ALTER COLUMN "stats_id" SET NOT NULL;
+  type: run_sql
+- args:
+    sql: COMMENT ON COLUMN "public"."user"."stats_id" IS 'null'
+  type: run_sql

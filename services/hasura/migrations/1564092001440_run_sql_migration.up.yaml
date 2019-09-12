@@ -1,0 +1,4 @@
+- args:
+    cascade: false
+    sql: DROP TABLE public.remove CASCADE;
+  type: run_sql

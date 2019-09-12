@@ -1,0 +1,12 @@
+- args:
+    name: drill_questions
+    table:
+      name: drill
+      schema: public
+    using:
+      foreign_key_constraint_on:
+        column: drill_id
+        table:
+          name: drill_question
+          schema: public
+  type: create_array_relationship

@@ -1,0 +1,6 @@
+- args:
+    relationship: challenge_stat
+    table:
+      name: challenge
+      schema: public
+  type: drop_relationship

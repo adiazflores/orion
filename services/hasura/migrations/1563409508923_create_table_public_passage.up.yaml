@@ -1,0 +1,19 @@
+- args:
+    sql:
+      CREATE TABLE "public"."passage"("passage_id" integer NOT NULL, "code" text
+      NOT NULL, "name" text NOT NULL, "instructions" text NOT NULL, "source" text
+      NOT NULL, "source_url" text NOT NULL, "description" text NOT NULL, "subject_id"
+      integer, "status_id" integer NOT NULL, "created_at" timestamptz NOT NULL DEFAULT
+      now()::timestamp, "created_by" integer NOT NULL, "last_updated_at" timestamptz,
+      "last_updated_by" integer NOT NULL, "active" boolean NOT NULL DEFAULT true,
+      PRIMARY KEY ("passage_id") , FOREIGN KEY ("status_id") REFERENCES "public"."status"("status_id")
+      ON UPDATE restrict ON DELETE restrict, FOREIGN KEY ("subject_id") REFERENCES
+      "public"."subject"("subject_id") ON UPDATE restrict ON DELETE restrict, FOREIGN
+      KEY ("created_by") REFERENCES "public"."user"("user_id") ON UPDATE restrict
+      ON DELETE restrict, FOREIGN KEY ("last_updated_by") REFERENCES "public"."user"("user_id")
+      ON UPDATE restrict ON DELETE restrict, UNIQUE ("passage_id"), UNIQUE ("code"));
+  type: run_sql
+- args:
+    name: passage
+    schema: public
+  type: add_existing_table_or_view

@@ -1,0 +1,11 @@
+- args:
+    sql: ALTER TABLE "public"."challenge_question" ALTER COLUMN "drill_id" TYPE integer;
+  type: run_sql
+- args:
+    sql: COMMENT ON COLUMN "public"."challenge_question"."drill_id" IS 'null'
+  type: run_sql
+- args:
+    sql:
+      alter table "public"."challenge_question" rename column "challenge_id" to
+      "drill_id";
+  type: run_sql

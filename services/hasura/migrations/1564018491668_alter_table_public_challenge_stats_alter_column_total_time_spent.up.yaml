@@ -1,0 +1,13 @@
+- args:
+    sql:
+      ALTER TABLE "public"."challenge_stats" ALTER COLUMN "total_time_spent" TYPE
+      int4;
+  type: run_sql
+- args:
+    sql:
+      ALTER TABLE ONLY "public"."challenge_stats" ALTER COLUMN "total_time_spent"
+      SET DEFAULT 0;
+  type: run_sql
+- args:
+    sql: COMMENT ON COLUMN "public"."challenge_stats"."total_time_spent" IS ''
+  type: run_sql

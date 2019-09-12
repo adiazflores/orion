@@ -1,0 +1,12 @@
+- args:
+    sql:
+      CREATE TABLE "public"."drill_question"("drill_question_id" integer NOT NULL,
+      "drill_id" integer NOT NULL, "question_id" integer NOT NULL, PRIMARY KEY ("drill_question_id")
+      , FOREIGN KEY ("drill_id") REFERENCES "public"."drill"("drill_id") ON UPDATE
+      restrict ON DELETE restrict, FOREIGN KEY ("question_id") REFERENCES "public"."question"("question_id")
+      ON UPDATE restrict ON DELETE restrict, UNIQUE ("drill_question_id"));
+  type: run_sql
+- args:
+    name: drill_question
+    schema: public
+  type: add_existing_table_or_view

@@ -1,0 +1,11 @@
+- args:
+    sql: ALTER TABLE "public"."user_stats" ALTER COLUMN "time_spent" TYPE int4;
+  type: run_sql
+- args:
+    sql:
+      ALTER TABLE ONLY "public"."user_stats" ALTER COLUMN "time_spent" SET DEFAULT
+      0;
+  type: run_sql
+- args:
+    sql: COMMENT ON COLUMN "public"."user_stats"."time_spent" IS ''
+  type: run_sql

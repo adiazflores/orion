@@ -1,0 +1,10 @@
+- args:
+    sql:
+      CREATE TABLE "public"."solution_template"("solution_template_id" integer
+      NOT NULL, "name" text NOT NULL, PRIMARY KEY ("solution_template_id") , UNIQUE
+      ("solution_template_id"));
+  type: run_sql
+- args:
+    name: solution_template
+    schema: public
+  type: add_existing_table_or_view

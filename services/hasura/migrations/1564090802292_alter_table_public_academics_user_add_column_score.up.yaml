@@ -1,0 +1,3 @@
+- args:
+    sql: ALTER TABLE "public"."academics_user" ADD COLUMN "score" integer NOT NULL
+  type: run_sql

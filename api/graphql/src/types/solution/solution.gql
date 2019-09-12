@@ -1,0 +1,22 @@
+type Solution {
+  solutionId: ID!
+  text: String!
+  question: Question
+  solutionTemplate: SolutionTemplate
+  description: String!
+  video: String
+  createdAt: Date!
+  lastUpdatedAt: Date
+  lastUpdatedBy: User
+  createdBy: User!
+  active: Boolean!
+}
+
+type SolutionTemplate {
+  solutionTemplateId: ID!
+  name: String!
+}
+
+type Query {
+  solution(questionId: ID!): Solution
+}

@@ -1,0 +1,3 @@
+- args:
+    sql: alter table "public"."challenge_question" rename to "drill_question";
+  type: run_sql

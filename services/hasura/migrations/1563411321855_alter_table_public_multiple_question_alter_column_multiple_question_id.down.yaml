@@ -1,0 +1,13 @@
+- args:
+    sql:
+      ALTER TABLE "public"."multiple_question" ALTER COLUMN "multiple_question_id"
+      TYPE integer;
+  type: run_sql
+- args:
+    sql: ALTER TABLE "public"."multiple_question" DROP CONSTRAINT "multiple_question_multiple_question_id_key"
+  type: run_sql
+- args:
+    sql:
+      COMMENT ON COLUMN "public"."multiple_question"."multiple_question_id" IS
+      'null'
+  type: run_sql

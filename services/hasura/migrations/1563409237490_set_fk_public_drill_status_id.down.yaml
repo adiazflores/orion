@@ -1,0 +1,5 @@
+- args:
+    sql:
+      "\n          alter table \"public\".\"drill\" drop constraint \"drill_status_id_fkey\"\n
+      \     "
+  type: run_sql

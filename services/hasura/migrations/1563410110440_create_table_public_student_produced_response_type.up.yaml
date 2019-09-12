@@ -1,0 +1,10 @@
+- args:
+    sql:
+      CREATE TABLE "public"."student_produced_response_type"("student_produced_response_type_id"
+      integer NOT NULL, "name" text NOT NULL, PRIMARY KEY ("student_produced_response_type_id")
+      , UNIQUE ("student_produced_response_type_id"));
+  type: run_sql
+- args:
+    name: student_produced_response_type
+    schema: public
+  type: add_existing_table_or_view

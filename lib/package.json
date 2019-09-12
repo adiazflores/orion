@@ -1,0 +1,9 @@
+{
+  "name": "@orionmono/orion-lib",
+  "version": "0.1.0",
+  "description": "Orion Lib",
+  "main": "index.js",
+  "author": "Supergroup <dev@supergroup.co>",
+  "license": "ISC",
+  "private": true
+}

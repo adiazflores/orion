@@ -1,0 +1,12 @@
+- args:
+    name: question_tags
+    table:
+      name: question
+      schema: public
+    using:
+      foreign_key_constraint_on:
+        column: question_id
+        table:
+          name: question_tag
+          schema: public
+  type: create_array_relationship

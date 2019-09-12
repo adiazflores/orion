@@ -1,0 +1,13 @@
+- args:
+    sql:
+      CREATE TABLE "public"."passage_multiple_question"("passage_id" integer NOT
+      NULL, "multiple_question_id" integer NOT NULL, PRIMARY KEY ("passage_id","multiple_question_id")
+      , FOREIGN KEY ("passage_id") REFERENCES "public"."passage"("passage_id") ON
+      UPDATE restrict ON DELETE restrict, FOREIGN KEY ("multiple_question_id") REFERENCES
+      "public"."multiple_question"("multiple_question_id") ON UPDATE restrict ON DELETE
+      restrict);
+  type: run_sql
+- args:
+    name: passage_multiple_question
+    schema: public
+  type: add_existing_table_or_view

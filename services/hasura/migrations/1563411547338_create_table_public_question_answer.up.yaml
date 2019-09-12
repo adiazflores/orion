@@ -1,0 +1,12 @@
+- args:
+    sql:
+      CREATE TABLE "public"."question_answer"("question_id" integer NOT NULL, "answer_choice_id"
+      integer NOT NULL, PRIMARY KEY ("question_id","answer_choice_id") , FOREIGN KEY
+      ("answer_choice_id") REFERENCES "public"."answer_choice"("answer_choice_id")
+      ON UPDATE restrict ON DELETE restrict, FOREIGN KEY ("question_id") REFERENCES
+      "public"."question"("question_id") ON UPDATE restrict ON DELETE restrict);
+  type: run_sql
+- args:
+    name: question_answer
+    schema: public
+  type: add_existing_table_or_view

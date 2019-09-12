@@ -1,0 +1,11 @@
+- args:
+    sql: ALTER TABLE "public"."academics_user" ALTER COLUMN "created_by" TYPE int4;
+  type: run_sql
+- args:
+    sql:
+      ALTER TABLE "public"."academics_user" ALTER COLUMN "created_by" DROP NOT
+      NULL;
+  type: run_sql
+- args:
+    sql: COMMENT ON COLUMN "public"."academics_user"."created_by" IS ''
+  type: run_sql

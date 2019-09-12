@@ -1,0 +1,11 @@
+- args:
+    sql: ALTER TABLE "public"."answer_choice_tag" ALTER COLUMN "answer_id" TYPE integer;
+  type: run_sql
+- args:
+    sql: COMMENT ON COLUMN "public"."answer_choice_tag"."answer_id" IS 'null'
+  type: run_sql
+- args:
+    sql:
+      alter table "public"."answer_choice_tag" rename column "answer_choice_id"
+      to "answer_id";
+  type: run_sql

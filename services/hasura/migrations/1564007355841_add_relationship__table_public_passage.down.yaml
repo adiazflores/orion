@@ -1,0 +1,6 @@
+- args:
+    relationship: subject
+    table:
+      name: passage
+      schema: public
+  type: drop_relationship

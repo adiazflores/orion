@@ -1,0 +1,14 @@
+- args:
+    sql:
+      CREATE TABLE "public"."subject"("subject_id" integer NOT NULL, "name" text
+      NOT NULL, "created_at" timestamptz NOT NULL DEFAULT now()::timestamp, "created_by"
+      integer NOT NULL, "last_updated_at" timestamptz, "last_updated_by" integer,
+      "active" boolean NOT NULL DEFAULT true, PRIMARY KEY ("subject_id") , FOREIGN
+      KEY ("created_by") REFERENCES "public"."user"("user_id") ON UPDATE restrict
+      ON DELETE restrict, FOREIGN KEY ("last_updated_by") REFERENCES "public"."user"("user_id")
+      ON UPDATE restrict ON DELETE restrict, UNIQUE ("subject_id"), UNIQUE ("name"));
+  type: run_sql
+- args:
+    name: subject
+    schema: public
+  type: add_existing_table_or_view

@@ -1,0 +1,8 @@
+- args:
+    name: content_type
+    table:
+      name: tag
+      schema: public
+    using:
+      foreign_key_constraint_on: content_type_id
+  type: create_object_relationship

@@ -1,0 +1,21 @@
+.UserList {
+  .Polaris-Page > .Polaris-Page__Content .Polaris-DataTable__ScrollContainer {
+    margin-left: 0;
+  }
+
+  .Polaris-Card__Section {
+    padding: 0;
+  }
+
+  @media (max-width: 48.0625em) and (min-width: 30.625em),
+    (min-width: 45.625em) {
+    .Polaris-Card__Section {
+      padding: 0;
+    }
+  }
+
+  .Polaris-Page {
+    margin: 0;
+    max-width: 100%;
+  }
+}

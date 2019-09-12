@@ -1,0 +1,7 @@
+- args:
+    sql:
+      "\n             alter table \"public\".\"challenge\" drop constraint \"challenge_challenge_id_fkey\",\n
+      \            add constraint \"challenge_stats_id_fkey\" \n             foreign
+      key (\"stats_id\") \n             references \"public\".\"challenge_stats\"\n
+      \            (\"id\") on update restrict on delete restrict;\n      "
+  type: run_sql

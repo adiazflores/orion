@@ -1,0 +1,5 @@
+- args:
+    sql:
+      "alter table \"public\".\"multiple_question\"\n    add constraint \"multiple_question_pkey\"
+      \n    primary key ( \"multiple_question_id\" );"
+  type: run_sql

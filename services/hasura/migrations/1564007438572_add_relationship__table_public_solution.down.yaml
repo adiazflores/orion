@@ -1,0 +1,6 @@
+- args:
+    relationship: solution_template
+    table:
+      name: solution
+      schema: public
+  type: drop_relationship

@@ -1,0 +1,9 @@
+- args:
+    sql: ALTER TABLE "public"."user" ALTER COLUMN "updated_at" TYPE timestamptz;
+  type: run_sql
+- args:
+    sql: COMMENT ON COLUMN "public"."user"."updated_at" IS ''
+  type: run_sql
+- args:
+    sql: alter table "public"."user" rename column "updated_at" to "last_updated_at";
+  type: run_sql

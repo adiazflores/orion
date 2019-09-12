@@ -1,0 +1,6 @@
+- args:
+    relationship: answer_choice
+    table:
+      name: answer_choice_tag
+      schema: public
+  type: drop_relationship

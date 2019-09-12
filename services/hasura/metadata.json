@@ -1,0 +1,1134 @@
+{
+  "functions": [],
+  "remote_schemas": [],
+  "query_collections": [],
+  "allowlist": [],
+  "tables": [
+    {
+      "table": "question_answer",
+      "object_relationships": [
+        {
+          "using": { "foreign_key_constraint_on": "question_id" },
+          "name": "question",
+          "comment": null
+        },
+        {
+          "using": { "foreign_key_constraint_on": "answer_choice_id" },
+          "name": "answer_choice",
+          "comment": null
+        }
+      ],
+      "array_relationships": [],
+      "insert_permissions": [],
+      "select_permissions": [],
+      "update_permissions": [],
+      "delete_permissions": [],
+      "event_triggers": []
+    },
+    {
+      "table": "content_type",
+      "object_relationships": [],
+      "array_relationships": [
+        {
+          "using": {
+            "foreign_key_constraint_on": {
+              "column": "content_type_id",
+              "table": "tag"
+            }
+          },
+          "name": "tags",
+          "comment": null
+        }
+      ],
+      "insert_permissions": [],
+      "select_permissions": [],
+      "update_permissions": [],
+      "delete_permissions": [],
+      "event_triggers": []
+    },
+    {
+      "table": "survey",
+      "object_relationships": [
+        {
+          "using": { "foreign_key_constraint_on": "id" },
+          "name": "challenge",
+          "comment": null
+        }
+      ],
+      "array_relationships": [],
+      "insert_permissions": [],
+      "select_permissions": [],
+      "update_permissions": [],
+      "delete_permissions": [],
+      "event_triggers": []
+    },
+    {
+      "table": "solution_template",
+      "object_relationships": [],
+      "array_relationships": [
+        {
+          "using": {
+            "foreign_key_constraint_on": {
+              "column": "solution_template_id",
+              "table": "solution"
+            }
+          },
+          "name": "solutions",
+          "comment": null
+        }
+      ],
+      "insert_permissions": [],
+      "select_permissions": [],
+      "update_permissions": [],
+      "delete_permissions": [],
+      "event_triggers": []
+    },
+    {
+      "table": "passage_question",
+      "object_relationships": [
+        {
+          "using": { "foreign_key_constraint_on": "passage_id" },
+          "name": "passage",
+          "comment": null
+        },
+        {
+          "using": { "foreign_key_constraint_on": "question_id" },
+          "name": "question",
+          "comment": null
+        }
+      ],
+      "array_relationships": [],
+      "insert_permissions": [],
+      "select_permissions": [],
+      "update_permissions": [],
+      "delete_permissions": [],
+      "event_triggers": []
+    },
+    {
+      "table": "subject",
+      "object_relationships": [
+        {
+          "using": { "foreign_key_constraint_on": "created_by" },
+          "name": "user",
+          "comment": null
+        },
+        {
+          "using": { "foreign_key_constraint_on": "last_updated_by" },
+          "name": "user_last_updated_by",
+          "comment": null
+        }
+      ],
+      "array_relationships": [
+        {
+          "using": {
+            "foreign_key_constraint_on": {
+              "column": "subject_id",
+              "table": "tag"
+            }
+          },
+          "name": "tags",
+          "comment": null
+        },
+        {
+          "using": {
+            "foreign_key_constraint_on": {
+              "column": "subject_id",
+              "table": "passage"
+            }
+          },
+          "name": "passages",
+          "comment": null
+        },
+        {
+          "using": {
+            "foreign_key_constraint_on": {
+              "column": "subject_id",
+              "table": "question"
+            }
+          },
+          "name": "questions",
+          "comment": null
+        },
+        {
+          "using": {
+            "foreign_key_constraint_on": {
+              "column": "subject_id",
+              "table": "challenge"
+            }
+          },
+          "name": "drills",
+          "comment": null
+        }
+      ],
+      "insert_permissions": [],
+      "select_permissions": [],
+      "update_permissions": [],
+      "delete_permissions": [],
+      "event_triggers": []
+    },
+    {
+      "table": "role",
+      "object_relationships": [],
+      "array_relationships": [
+        {
+          "using": {
+            "foreign_key_constraint_on": {
+              "column": "role_id",
+              "table": "user"
+            }
+          },
+          "name": "users",
+          "comment": null
+        }
+      ],
+      "insert_permissions": [],
+      "select_permissions": [],
+      "update_permissions": [],
+      "delete_permissions": [],
+      "event_triggers": []
+    },
+    {
+      "table": "question_type",
+      "object_relationships": [],
+      "array_relationships": [],
+      "insert_permissions": [],
+      "select_permissions": [],
+      "update_permissions": [],
+      "delete_permissions": [],
+      "event_triggers": []
+    },
+    {
+      "table": "question_template",
+      "object_relationships": [],
+      "array_relationships": [
+        {
+          "using": {
+            "foreign_key_constraint_on": {
+              "column": "question_template_id",
+              "table": "question"
+            }
+          },
+          "name": "questions",
+          "comment": null
+        }
+      ],
+      "insert_permissions": [],
+      "select_permissions": [],
+      "update_permissions": [],
+      "delete_permissions": [],
+      "event_triggers": []
+    },
+    {
+      "table": "solution",
+      "object_relationships": [
+        {
+          "using": { "foreign_key_constraint_on": "question_id" },
+          "name": "question",
+          "comment": null
+        },
+        {
+          "using": { "foreign_key_constraint_on": "solution_template_id" },
+          "name": "solution_template",
+          "comment": null
+        },
+        {
+          "using": { "foreign_key_constraint_on": "last_updated_by" },
+          "name": "user_last_updated_by",
+          "comment": null
+        },
+        {
+          "using": { "foreign_key_constraint_on": "created_by" },
+          "name": "user",
+          "comment": null
+        }
+      ],
+      "array_relationships": [],
+      "insert_permissions": [],
+      "select_permissions": [],
+      "update_permissions": [],
+      "delete_permissions": [],
+      "event_triggers": []
+    },
+    {
+      "table": "passage",
+      "object_relationships": [
+        {
+          "using": { "foreign_key_constraint_on": "subject_id" },
+          "name": "subject",
+          "comment": null
+        },
+        {
+          "using": { "foreign_key_constraint_on": "status_id" },
+          "name": "status",
+          "comment": null
+        },
+        {
+          "using": { "foreign_key_constraint_on": "created_by" },
+          "name": "user",
+          "comment": null
+        },
+        {
+          "using": { "foreign_key_constraint_on": "last_updated_by" },
+          "name": "user_last_updated_by",
+          "comment": null
+        }
+      ],
+      "array_relationships": [
+        {
+          "using": {
+            "foreign_key_constraint_on": {
+              "column": "passage_id",
+              "table": "question"
+            }
+          },
+          "name": "questions",
+          "comment": null
+        },
+        {
+          "using": {
+            "foreign_key_constraint_on": {
+              "column": "passage_id",
+              "table": "passage_multiple_question"
+            }
+          },
+          "name": "passage_multiple_questions",
+          "comment": null
+        },
+        {
+          "using": {
+            "foreign_key_constraint_on": {
+              "column": "passage_id",
+              "table": "passage_question"
+            }
+          },
+          "name": "passage_questions",
+          "comment": null
+        },
+        {
+          "using": {
+            "foreign_key_constraint_on": {
+              "column": "passage_id",
+              "table": "passage_tag"
+            }
+          },
+          "name": "passage_tags",
+          "comment": null
+        }
+      ],
+      "insert_permissions": [],
+      "select_permissions": [],
+      "update_permissions": [],
+      "delete_permissions": [],
+      "event_triggers": []
+    },
+    {
+      "table": "answer_stats",
+      "object_relationships": [],
+      "array_relationships": [
+        {
+          "using": {
+            "foreign_key_constraint_on": {
+              "column": "stats_id",
+              "table": "answer_choice"
+            }
+          },
+          "name": "answer_choices",
+          "comment": null
+        }
+      ],
+      "insert_permissions": [],
+      "select_permissions": [],
+      "update_permissions": [],
+      "delete_permissions": [],
+      "event_triggers": []
+    },
+    {
+      "table": "challenge_question",
+      "object_relationships": [
+        {
+          "using": { "foreign_key_constraint_on": "question_id" },
+          "name": "question",
+          "comment": null
+        },
+        {
+          "using": { "foreign_key_constraint_on": "challenge_id" },
+          "name": "drill",
+          "comment": null
+        }
+      ],
+      "array_relationships": [],
+      "insert_permissions": [],
+      "select_permissions": [],
+      "update_permissions": [],
+      "delete_permissions": [],
+      "event_triggers": []
+    },
+    {
+      "table": "tag",
+      "object_relationships": [
+        {
+          "using": { "foreign_key_constraint_on": "subject_id" },
+          "name": "subject",
+          "comment": null
+        },
+        {
+          "using": { "foreign_key_constraint_on": "content_type_id" },
+          "name": "content_type",
+          "comment": null
+        },
+        {
+          "using": { "foreign_key_constraint_on": "created_by" },
+          "name": "user",
+          "comment": null
+        },
+        {
+          "using": { "foreign_key_constraint_on": "last_updated_by" },
+          "name": "user_last_updated_by",
+          "comment": null
+        }
+      ],
+      "array_relationships": [
+        {
+          "using": {
+            "foreign_key_constraint_on": {
+              "column": "tag_id",
+              "table": "passage_tag"
+            }
+          },
+          "name": "passage_tags",
+          "comment": null
+        },
+        {
+          "using": {
+            "foreign_key_constraint_on": {
+              "column": "tag_id",
+              "table": "answer_choice_tag"
+            }
+          },
+          "name": "answer_choice_tags",
+          "comment": null
+        },
+        {
+          "using": {
+            "foreign_key_constraint_on": {
+              "column": "tag_id",
+              "table": "question_tag"
+            }
+          },
+          "name": "question_tags",
+          "comment": null
+        }
+      ],
+      "insert_permissions": [],
+      "select_permissions": [],
+      "update_permissions": [],
+      "delete_permissions": [],
+      "event_triggers": []
+    },
+    {
+      "table": "user_stats",
+      "object_relationships": [],
+      "array_relationships": [
+        {
+          "using": {
+            "foreign_key_constraint_on": {
+              "column": "stats_id",
+              "table": "user"
+            }
+          },
+          "name": "users",
+          "comment": null
+        }
+      ],
+      "insert_permissions": [],
+      "select_permissions": [],
+      "update_permissions": [],
+      "delete_permissions": [],
+      "event_triggers": []
+    },
+    {
+      "table": "challenge_stats",
+      "object_relationships": [],
+      "array_relationships": [
+        {
+          "using": {
+            "foreign_key_constraint_on": {
+              "column": "stats_id",
+              "table": "challenge"
+            }
+          },
+          "name": "challenges",
+          "comment": null
+        }
+      ],
+      "insert_permissions": [],
+      "select_permissions": [],
+      "update_permissions": [],
+      "delete_permissions": [],
+      "event_triggers": []
+    },
+    {
+      "table": "answer_choice_tag",
+      "object_relationships": [
+        {
+          "using": { "foreign_key_constraint_on": "tag_id" },
+          "name": "tag",
+          "comment": null
+        },
+        {
+          "using": { "foreign_key_constraint_on": "answer_choice_id" },
+          "name": "answer_choice",
+          "comment": null
+        }
+      ],
+      "array_relationships": [],
+      "insert_permissions": [],
+      "select_permissions": [],
+      "update_permissions": [],
+      "delete_permissions": [],
+      "event_triggers": []
+    },
+    {
+      "table": "question",
+      "object_relationships": [
+        {
+          "using": { "foreign_key_constraint_on": "type_id" },
+          "name": "question_type",
+          "comment": null
+        },
+        {
+          "using": { "foreign_key_constraint_on": "subject_id" },
+          "name": "subject",
+          "comment": null
+        },
+        {
+          "using": { "foreign_key_constraint_on": "status_id" },
+          "name": "status",
+          "comment": null
+        },
+        {
+          "using": { "foreign_key_constraint_on": "question_template_id" },
+          "name": "question_template",
+          "comment": null
+        },
+        {
+          "using": { "foreign_key_constraint_on": "passage_id" },
+          "name": "passage",
+          "comment": null
+        },
+        {
+          "using": { "foreign_key_constraint_on": "last_updated_by" },
+          "name": "user_last_updated_by",
+          "comment": null
+        },
+        {
+          "using": { "foreign_key_constraint_on": "created_by" },
+          "name": "user",
+          "comment": null
+        }
+      ],
+      "array_relationships": [
+        {
+          "using": {
+            "foreign_key_constraint_on": {
+              "column": "question_id",
+              "table": "multiple_question"
+            }
+          },
+          "name": "multiple_questions",
+          "comment": null
+        },
+        {
+          "using": {
+            "foreign_key_constraint_on": {
+              "column": "question_id",
+              "table": "answer_choice"
+            }
+          },
+          "name": "answer_choices",
+          "comment": null
+        },
+        {
+          "using": {
+            "foreign_key_constraint_on": {
+              "column": "question_id",
+              "table": "solution"
+            }
+          },
+          "name": "solutions",
+          "comment": null
+        },
+        {
+          "using": {
+            "foreign_key_constraint_on": {
+              "column": "question_id",
+              "table": "question_answer"
+            }
+          },
+          "name": "question_answers",
+          "comment": null
+        },
+        {
+          "using": {
+            "foreign_key_constraint_on": {
+              "column": "question_id",
+              "table": "passage_question"
+            }
+          },
+          "name": "passage_questions",
+          "comment": null
+        },
+        {
+          "using": {
+            "foreign_key_constraint_on": {
+              "column": "question_id",
+              "table": "question_tag"
+            }
+          },
+          "name": "question_tags",
+          "comment": null
+        },
+        {
+          "using": {
+            "foreign_key_constraint_on": {
+              "column": "question_id",
+              "table": "challenge_question"
+            }
+          },
+          "name": "drill_questions",
+          "comment": null
+        }
+      ],
+      "insert_permissions": [],
+      "select_permissions": [],
+      "update_permissions": [],
+      "delete_permissions": [],
+      "event_triggers": []
+    },
+    {
+      "table": "student_produced_response_type",
+      "object_relationships": [],
+      "array_relationships": [
+        {
+          "using": {
+            "foreign_key_constraint_on": {
+              "column": "student_produced_response_type_id",
+              "table": "answer_choice"
+            }
+          },
+          "name": "answer_choices",
+          "comment": null
+        }
+      ],
+      "insert_permissions": [],
+      "select_permissions": [],
+      "update_permissions": [],
+      "delete_permissions": [],
+      "event_triggers": []
+    },
+    {
+      "table": "answer_template",
+      "object_relationships": [],
+      "array_relationships": [
+        {
+          "using": {
+            "foreign_key_constraint_on": {
+              "column": "answer_template_id",
+              "table": "answer_choice"
+            }
+          },
+          "name": "answer_choices",
+          "comment": null
+        }
+      ],
+      "insert_permissions": [],
+      "select_permissions": [],
+      "update_permissions": [],
+      "delete_permissions": [],
+      "event_triggers": []
+    },
+    {
+      "table": "question_tag",
+      "object_relationships": [
+        {
+          "using": { "foreign_key_constraint_on": "tag_id" },
+          "name": "tag",
+          "comment": null
+        },
+        {
+          "using": { "foreign_key_constraint_on": "question_id" },
+          "name": "question",
+          "comment": null
+        }
+      ],
+      "array_relationships": [],
+      "insert_permissions": [],
+      "select_permissions": [],
+      "update_permissions": [],
+      "delete_permissions": [],
+      "event_triggers": []
+    },
+    {
+      "table": "challenge",
+      "object_relationships": [
+        {
+          "using": { "foreign_key_constraint_on": "status_id" },
+          "name": "status",
+          "comment": null
+        },
+        {
+          "using": { "foreign_key_constraint_on": "subject_id" },
+          "name": "subject",
+          "comment": null
+        },
+        {
+          "using": { "foreign_key_constraint_on": "stats_id" },
+          "name": "challenge_stat",
+          "comment": null
+        },
+        {
+          "using": { "foreign_key_constraint_on": "last_updated_by" },
+          "name": "user_last_updated_by",
+          "comment": null
+        },
+        {
+          "using": { "foreign_key_constraint_on": "created_by" },
+          "name": "user",
+          "comment": null
+        }
+      ],
+      "array_relationships": [
+        {
+          "using": {
+            "foreign_key_constraint_on": {
+              "column": "challenge_id",
+              "table": "challenge_question"
+            }
+          },
+          "name": "drill_questions",
+          "comment": null
+        },
+        {
+          "using": {
+            "foreign_key_constraint_on": { "column": "id", "table": "survey" }
+          },
+          "name": "surveys",
+          "comment": null
+        }
+      ],
+      "insert_permissions": [],
+      "select_permissions": [],
+      "update_permissions": [],
+      "delete_permissions": [],
+      "event_triggers": []
+    },
+    {
+      "table": "status",
+      "object_relationships": [
+        {
+          "using": { "foreign_key_constraint_on": "last_updated_by" },
+          "name": "user_last_updated_by",
+          "comment": null
+        },
+        {
+          "using": { "foreign_key_constraint_on": "created_by" },
+          "name": "user",
+          "comment": null
+        }
+      ],
+      "array_relationships": [
+        {
+          "using": {
+            "foreign_key_constraint_on": {
+              "column": "status_id",
+              "table": "passage"
+            }
+          },
+          "name": "passages",
+          "comment": null
+        },
+        {
+          "using": {
+            "foreign_key_constraint_on": {
+              "column": "status_id",
+              "table": "question"
+            }
+          },
+          "name": "questions",
+          "comment": null
+        },
+        {
+          "using": {
+            "foreign_key_constraint_on": {
+              "column": "status_id",
+              "table": "challenge"
+            }
+          },
+          "name": "drills",
+          "comment": null
+        }
+      ],
+      "insert_permissions": [],
+      "select_permissions": [],
+      "update_permissions": [],
+      "delete_permissions": [],
+      "event_triggers": []
+    },
+    {
+      "table": "passage_multiple_question",
+      "object_relationships": [
+        {
+          "using": { "foreign_key_constraint_on": "passage_id" },
+          "name": "passage",
+          "comment": null
+        },
+        {
+          "using": { "foreign_key_constraint_on": "multiple_question_id" },
+          "name": "multiple_question",
+          "comment": null
+        }
+      ],
+      "array_relationships": [],
+      "insert_permissions": [],
+      "select_permissions": [],
+      "update_permissions": [],
+      "delete_permissions": [],
+      "event_triggers": []
+    },
+    {
+      "table": "multiple_question",
+      "object_relationships": [
+        {
+          "using": { "foreign_key_constraint_on": "question_id" },
+          "name": "question",
+          "comment": null
+        }
+      ],
+      "array_relationships": [
+        {
+          "using": {
+            "foreign_key_constraint_on": {
+              "column": "multiple_question_id",
+              "table": "passage_multiple_question"
+            }
+          },
+          "name": "passage_multiple_questions",
+          "comment": null
+        }
+      ],
+      "insert_permissions": [],
+      "select_permissions": [],
+      "update_permissions": [],
+      "delete_permissions": [],
+      "event_triggers": []
+    },
+    {
+      "table": "user",
+      "object_relationships": [
+        {
+          "using": { "foreign_key_constraint_on": "role_id" },
+          "name": "role",
+          "comment": null
+        },
+        {
+          "using": { "foreign_key_constraint_on": "created_by" },
+          "name": "user",
+          "comment": null
+        },
+        {
+          "using": { "foreign_key_constraint_on": "last_updated_by" },
+          "name": "user_last_updated_by",
+          "comment": null
+        },
+        {
+          "using": { "foreign_key_constraint_on": "stats_id" },
+          "name": "user_stat",
+          "comment": null
+        }
+      ],
+      "array_relationships": [
+        {
+          "using": {
+            "foreign_key_constraint_on": {
+              "column": "created_by",
+              "table": "subject"
+            }
+          },
+          "name": "subjects",
+          "comment": null
+        },
+        {
+          "using": {
+            "foreign_key_constraint_on": {
+              "column": "last_updated_by",
+              "table": "subject"
+            }
+          },
+          "name": "subjectsByLastUpdatedBy",
+          "comment": null
+        },
+        {
+          "using": {
+            "foreign_key_constraint_on": {
+              "column": "created_by",
+              "table": "status"
+            }
+          },
+          "name": "statuses",
+          "comment": null
+        },
+        {
+          "using": {
+            "foreign_key_constraint_on": {
+              "column": "last_updated_by",
+              "table": "status"
+            }
+          },
+          "name": "statusesByLastUpdatedBy",
+          "comment": null
+        },
+        {
+          "using": {
+            "foreign_key_constraint_on": {
+              "column": "created_by",
+              "table": "challenge"
+            }
+          },
+          "name": "challenges",
+          "comment": null
+        },
+        {
+          "using": {
+            "foreign_key_constraint_on": {
+              "column": "last_updated_by",
+              "table": "challenge"
+            }
+          },
+          "name": "challengesByLastUpdatedBy",
+          "comment": null
+        },
+        {
+          "using": {
+            "foreign_key_constraint_on": {
+              "column": "created_by",
+              "table": "tag"
+            }
+          },
+          "name": "tags",
+          "comment": null
+        },
+        {
+          "using": {
+            "foreign_key_constraint_on": {
+              "column": "last_updated_by",
+              "table": "tag"
+            }
+          },
+          "name": "tagsByLastUpdatedBy",
+          "comment": null
+        },
+        {
+          "using": {
+            "foreign_key_constraint_on": {
+              "column": "created_by",
+              "table": "passage"
+            }
+          },
+          "name": "passages",
+          "comment": null
+        },
+        {
+          "using": {
+            "foreign_key_constraint_on": {
+              "column": "last_updated_by",
+              "table": "passage"
+            }
+          },
+          "name": "passagesByLastUpdatedBy",
+          "comment": null
+        },
+        {
+          "using": {
+            "foreign_key_constraint_on": {
+              "column": "created_by",
+              "table": "question"
+            }
+          },
+          "name": "questions",
+          "comment": null
+        },
+        {
+          "using": {
+            "foreign_key_constraint_on": {
+              "column": "last_updated_by",
+              "table": "question"
+            }
+          },
+          "name": "questionsByLastUpdatedBy",
+          "comment": null
+        },
+        {
+          "using": {
+            "foreign_key_constraint_on": {
+              "column": "created_by",
+              "table": "answer_choice"
+            }
+          },
+          "name": "answer_choices",
+          "comment": null
+        },
+        {
+          "using": {
+            "foreign_key_constraint_on": {
+              "column": "last_updated_by",
+              "table": "answer_choice"
+            }
+          },
+          "name": "answerChoicesByLastUpdatedBy",
+          "comment": null
+        },
+        {
+          "using": {
+            "foreign_key_constraint_on": {
+              "column": "created_by",
+              "table": "solution"
+            }
+          },
+          "name": "solutions",
+          "comment": null
+        },
+        {
+          "using": {
+            "foreign_key_constraint_on": {
+              "column": "last_updated_by",
+              "table": "solution"
+            }
+          },
+          "name": "solutionsByLastUpdatedBy",
+          "comment": null
+        },
+        {
+          "using": {
+            "foreign_key_constraint_on": {
+              "column": "last_updated_by",
+              "table": "user"
+            }
+          },
+          "name": "users",
+          "comment": null
+        },
+        {
+          "using": {
+            "foreign_key_constraint_on": {
+              "column": "created_by",
+              "table": "user"
+            }
+          },
+          "name": "usersByCreatedBy",
+          "comment": null
+        }
+      ],
+      "insert_permissions": [],
+      "select_permissions": [],
+      "update_permissions": [],
+      "delete_permissions": [],
+      "event_triggers": []
+    },
+    {
+      "table": "passage_tag",
+      "object_relationships": [
+        {
+          "using": { "foreign_key_constraint_on": "tag_id" },
+          "name": "tag",
+          "comment": null
+        },
+        {
+          "using": { "foreign_key_constraint_on": "passage_id" },
+          "name": "passage",
+          "comment": null
+        }
+      ],
+      "array_relationships": [],
+      "insert_permissions": [],
+      "select_permissions": [],
+      "update_permissions": [],
+      "delete_permissions": [],
+      "event_triggers": []
+    },
+    {
+      "table": "answer_choice",
+      "object_relationships": [
+        {
+          "using": { "foreign_key_constraint_on": "answer_template_id" },
+          "name": "answer_template",
+          "comment": null
+        },
+        {
+          "using": { "foreign_key_constraint_on": "question_id" },
+          "name": "question",
+          "comment": null
+        },
+        {
+          "using": {
+            "foreign_key_constraint_on": "student_produced_response_type_id"
+          },
+          "name": "student_produced_response_type",
+          "comment": null
+        },
+        {
+          "using": { "foreign_key_constraint_on": "last_updated_by" },
+          "name": "user_last_updated_by",
+          "comment": null
+        },
+        {
+          "using": { "foreign_key_constraint_on": "created_by" },
+          "name": "user",
+          "comment": null
+        },
+        {
+          "using": { "foreign_key_constraint_on": "stats_id" },
+          "name": "answer_stat",
+          "comment": null
+        }
+      ],
+      "array_relationships": [
+        {
+          "using": {
+            "foreign_key_constraint_on": {
+              "column": "answer_choice_id",
+              "table": "question_answer"
+            }
+          },
+          "name": "question_answers",
+          "comment": null
+        },
+        {
+          "using": {
+            "foreign_key_constraint_on": {
+              "column": "answer_choice_id",
+              "table": "answer_choice_tag"
+            }
+          },
+          "name": "answer_choice_tags",
+          "comment": null
+        }
+      ],
+      "insert_permissions": [],
+      "select_permissions": [],
+      "update_permissions": [],
+      "delete_permissions": [],
+      "event_triggers": []
+    },
+    {
+      "table": "question_stats",
+      "object_relationships": [],
+      "array_relationships": [],
+      "insert_permissions": [],
+      "select_permissions": [],
+      "update_permissions": [],
+      "delete_permissions": [],
+      "event_triggers": []
+    }
+  ],
+  "query_templates": []
+}

@@ -1,0 +1,13 @@
+- args:
+    sql:
+      ALTER TABLE "public"."academics_user" ALTER COLUMN "last_updated_at" TYPE
+      timestamptz;
+  type: run_sql
+- args:
+    sql:
+      ALTER TABLE ONLY "public"."academics_user" ALTER COLUMN "last_updated_at"
+      SET DEFAULT (now())::timestamp without time zone;
+  type: run_sql
+- args:
+    sql: COMMENT ON COLUMN "public"."academics_user"."last_updated_at" IS ''
+  type: run_sql

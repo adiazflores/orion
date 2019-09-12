@@ -1,0 +1,12 @@
+- args:
+    name: answer_choices
+    table:
+      name: answer_template
+      schema: public
+    using:
+      foreign_key_constraint_on:
+        column: answer_template_id
+        table:
+          name: answer_choice
+          schema: public
+  type: create_array_relationship

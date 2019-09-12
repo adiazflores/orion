@@ -1,0 +1,12 @@
+- args:
+    name: passages
+    table:
+      name: status
+      schema: public
+    using:
+      foreign_key_constraint_on:
+        column: status_id
+        table:
+          name: passage
+          schema: public
+  type: create_array_relationship

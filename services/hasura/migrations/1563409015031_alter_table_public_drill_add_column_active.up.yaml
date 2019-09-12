@@ -1,0 +1,5 @@
+- args:
+    sql:
+      ALTER TABLE "public"."drill" ADD COLUMN "active" boolean NOT NULL DEFAULT
+      true
+  type: run_sql

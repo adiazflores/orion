@@ -1,0 +1,42 @@
+{
+  "name": "orionmono",
+  "version": "0.1.0",
+  "description": "Orion",
+  "main": "index.js",
+  "repository": "git@github.com:orionllc/orionmono.git",
+  "author": "Supergroup <dev@supergroup.co>",
+  "license": "ISC",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "api/*",
+      "lib/*",
+      "services/*",
+      "ui/*"
+    ],
+    "nohoist": [
+      "**/jest",
+      "**/jest/**"
+    ]
+  },
+  "scripts": {
+    "compile": "lerna run compile",
+    "clean": "lerna run clean",
+    "lint": "lerna run lint",
+    "test": "lerna run test",
+    "update-version": "lerna publish --no-git-tag-version --skip-npm --force-publish '*'",
+    "check-packages": "yarn clean && yarn compile && yarn test && yarn lint"
+  },
+  "devDependencies": {
+    "husky": "^2.2.0",
+    "jest": "^24.7.1",
+    "lerna": "^3.13.4",
+    "prettier": "^1.17.0",
+    "pretty-quick": "^1.10.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  }
+}

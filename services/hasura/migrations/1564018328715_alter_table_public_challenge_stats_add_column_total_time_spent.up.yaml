@@ -1,0 +1,5 @@
+- args:
+    sql:
+      ALTER TABLE "public"."challenge_stats" ADD COLUMN "total_time_spent" integer
+      NULL
+  type: run_sql

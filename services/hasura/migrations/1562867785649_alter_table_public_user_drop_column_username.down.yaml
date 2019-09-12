@@ -1,0 +1,9 @@
+- args:
+    sql: ALTER TABLE "public"."user" ADD COLUMN "username" text
+  type: run_sql
+- args:
+    sql: ALTER TABLE "public"."user" ALTER COLUMN "username" DROP NOT NULL
+  type: run_sql
+- args:
+    sql: ALTER TABLE "public"."user" ADD CONSTRAINT user_username_key UNIQUE (username)
+  type: run_sql

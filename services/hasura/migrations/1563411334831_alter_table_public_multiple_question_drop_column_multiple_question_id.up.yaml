@@ -1,0 +1,5 @@
+- args:
+    sql:
+      ALTER TABLE "public"."multiple_question" DROP COLUMN "multiple_question_id"
+      CASCADE
+  type: run_sql

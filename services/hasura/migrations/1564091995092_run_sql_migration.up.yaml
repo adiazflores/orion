@@ -1,0 +1,4 @@
+- args:
+    cascade: false
+    sql: DROP TABLE public.user_type CASCADE;
+  type: run_sql

@@ -1,0 +1,14 @@
+- args:
+    sql: ALTER TABLE "public"."challenge" ALTER COLUMN "drill_id" TYPE int4;
+  type: run_sql
+- args:
+    sql:
+      ALTER TABLE "public"."challenge" ADD CONSTRAINT "challenge_drill_id_key"
+      UNIQUE ("drill_id")
+  type: run_sql
+- args:
+    sql: COMMENT ON COLUMN "public"."challenge"."drill_id" IS ''
+  type: run_sql
+- args:
+    sql: alter table "public"."challenge" rename column "drill_id" to "challenge_id";
+  type: run_sql

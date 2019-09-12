@@ -1,0 +1,9 @@
+- args:
+    sql:
+      CREATE TABLE "public"."question_type"("id" serial NOT NULL, "type" text NOT
+      NULL, PRIMARY KEY ("id") );
+  type: run_sql
+- args:
+    name: question_type
+    schema: public
+  type: add_existing_table_or_view

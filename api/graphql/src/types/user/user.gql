@@ -1,0 +1,50 @@
+scalar Date
+
+type User {
+  userId: ID!
+  username: String
+  firstname: String!
+  lastname: String!
+  email: String!
+  password: String!
+  role: Int!
+  score: Int!
+  stats: UserStats
+  avatarUrl: String!
+  active: Boolean!
+  createdAt: Date!
+  lastUpdatedAt: Date
+  lastUpdatedBy: User
+  createdBy: User
+}
+
+type UserStats {
+  totalCompleted: Int!
+  timeSpent: Int!
+  streak: Int!
+}
+
+type Query {
+  users: [User!]!
+}
+
+input NewUserInput {
+  email: String!
+  password: String!
+  firstname: String!
+  lastname: String!
+  username: String
+  roleId: Int!
+}
+
+type AuthPayload {
+  token: String
+  user: User
+  validationMsg: String
+}
+
+type Mutation {
+  signUp(input: NewUserInput!): AuthPayload
+  deleteUser(id: Int!): User
+  signIn(email: String!, password: String!): AuthPayload
+}

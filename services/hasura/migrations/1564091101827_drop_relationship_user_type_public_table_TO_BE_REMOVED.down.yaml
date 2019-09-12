@@ -1,0 +1,8 @@
+- args:
+    name: user_type
+    table:
+      name: TO_BE_REMOVED
+      schema: public
+    using:
+      foreign_key_constraint_on: type_id
+  type: create_object_relationship

@@ -1,0 +1,8 @@
+- args:
+    sql: ALTER TABLE "public"."drill_question" ADD COLUMN "drill_question_id" int4
+  type: run_sql
+- args:
+    sql:
+      ALTER TABLE "public"."drill_question" ALTER COLUMN "drill_question_id" DROP
+      NOT NULL
+  type: run_sql

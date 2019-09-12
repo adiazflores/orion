@@ -1,0 +1,10 @@
+- args:
+    sql:
+      CREATE TABLE "public"."survey"("id" serial NOT NULL, "challenge_id" integer
+      NOT NULL, "url" text NOT NULL, PRIMARY KEY ("id") , FOREIGN KEY ("id") REFERENCES
+      "public"."challenge"("challenge_id") ON UPDATE restrict ON DELETE restrict);
+  type: run_sql
+- args:
+    name: survey
+    schema: public
+  type: add_existing_table_or_view

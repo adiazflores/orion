@@ -1,0 +1,3 @@
+- args:
+    sql: DROP TABLE "public"."passage_multiple_question"
+  type: run_sql

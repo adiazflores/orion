@@ -1,0 +1,43 @@
+.App {
+  background: blue;
+}
+
+.position-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.Polaris-Page {
+  background: #fbfbfb;
+}
+
+.login-box {
+  margin-top: 25%;
+}
+
+.Polaris-Page {
+  background: inherit;
+}
+
+.login-bx {
+  padding: 20%;
+}
+
+.login-bx .log-in-frm {
+  padding: 0% 25% 0% 25%;
+}
+.login-bx .Polaris-Button {
+  margin-top: 30%;
+  width: 100%;
+  background: #8893ce;
+  color: white;
+  font-weight: bold;
+}
+
+.login-bx .forgot-lnk {
+  text-align: center;
+  color: blue;
+  margin-left: 30%;
+}

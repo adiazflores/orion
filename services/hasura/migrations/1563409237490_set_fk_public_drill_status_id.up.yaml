@@ -1,0 +1,7 @@
+- args:
+    sql:
+      "\n           alter table \"public\".\"drill\"\n           add constraint
+      \"drill_status_id_fkey\" \n           foreign key (\"status_id\") \n           references
+      \"public\".\"status\"\n           (\"status_id\") on update restrict on delete
+      restrict;\n      "
+  type: run_sql

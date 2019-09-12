@@ -1,0 +1,6 @@
+- args:
+    relationship: multiple_question
+    table:
+      name: passage_multiple_question
+      schema: public
+  type: drop_relationship

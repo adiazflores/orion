@@ -1,0 +1,16 @@
+- args:
+    sql:
+      CREATE TABLE "public"."solution"("solution_id" integer NOT NULL, "question_id"
+      integer NOT NULL, "solution_template_id" integer NOT NULL, "description" text
+      NOT NULL, "video" text NOT NULL, "created_at" timestamptz NOT NULL DEFAULT now()::timestamp,
+      "created_by" integer NOT NULL, "last_updated_at" timestamptz, "last_updated_by"
+      integer, PRIMARY KEY ("solution_id") , FOREIGN KEY ("question_id") REFERENCES
+      "public"."question"("question_id") ON UPDATE restrict ON DELETE restrict, FOREIGN
+      KEY ("created_by") REFERENCES "public"."user"("user_id") ON UPDATE restrict
+      ON DELETE restrict, FOREIGN KEY ("last_updated_by") REFERENCES "public"."user"("user_id")
+      ON UPDATE restrict ON DELETE restrict);
+  type: run_sql
+- args:
+    name: solution
+    schema: public
+  type: add_existing_table_or_view

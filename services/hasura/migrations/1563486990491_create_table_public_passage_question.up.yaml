@@ -1,0 +1,9 @@
+- args:
+    sql:
+      CREATE TABLE "public"."passage_question"("passage_id" integer NOT NULL, "question_id"
+      integer NOT NULL, PRIMARY KEY ("passage_id","question_id") );
+  type: run_sql
+- args:
+    name: passage_question
+    schema: public
+  type: add_existing_table_or_view

@@ -1,0 +1,10 @@
+- args:
+    sql:
+      CREATE TABLE "public"."answer_template"("answer_template_id" integer NOT
+      NULL, "name" text NOT NULL, "active" boolean NOT NULL DEFAULT true, PRIMARY
+      KEY ("answer_template_id") , UNIQUE ("answer_template_id"), UNIQUE ("name"));
+  type: run_sql
+- args:
+    name: answer_template
+    schema: public
+  type: add_existing_table_or_view

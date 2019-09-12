@@ -1,0 +1,12 @@
+- args:
+    sql: ALTER TABLE "public"."user" ALTER COLUMN "id" TYPE int4;
+  type: run_sql
+- args:
+    sql: ALTER TABLE "public"."user" ADD CONSTRAINT "user_id_key" UNIQUE ("id")
+  type: run_sql
+- args:
+    sql: COMMENT ON COLUMN "public"."user"."id" IS ''
+  type: run_sql
+- args:
+    sql: alter table "public"."user" rename column "id" to "user_id";
+  type: run_sql

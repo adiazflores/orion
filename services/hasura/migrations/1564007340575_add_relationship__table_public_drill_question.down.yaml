@@ -1,0 +1,6 @@
+- args:
+    relationship: drill
+    table:
+      name: drill_question
+      schema: public
+  type: drop_relationship

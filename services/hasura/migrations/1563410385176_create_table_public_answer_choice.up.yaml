@@ -1,0 +1,23 @@
+- args:
+    sql:
+      CREATE TABLE "public"."answer_choice"("answer_choice_id" integer NOT NULL,
+      "answer_template_id" integer NOT NULL, "question_id" integer NOT NULL, "order"
+      integer NOT NULL, "description" text NOT NULL, "image" text NOT NULL, "is_correct_answer"
+      boolean NOT NULL, "student_produced_response_type_id" integer NOT NULL, "student_produced_response_range_from"
+      float8 NOT NULL, "student_produced_response_range_to" float8 NOT NULL, "student_produced_response_single_value"
+      float8 NOT NULL, "created_at" timestamptz NOT NULL DEFAULT now()::timestamp,
+      "created_by" integer NOT NULL, "last_updated_at" timestamptz, "last_updated_by"
+      integer, "active" boolean NOT NULL DEFAULT true, PRIMARY KEY ("answer_choice_id")
+      , FOREIGN KEY ("answer_template_id") REFERENCES "public"."answer_template"("answer_template_id")
+      ON UPDATE restrict ON DELETE restrict, FOREIGN KEY ("question_id") REFERENCES
+      "public"."question"("question_id") ON UPDATE restrict ON DELETE restrict, FOREIGN
+      KEY ("student_produced_response_type_id") REFERENCES "public"."student_produced_response_type"("student_produced_response_type_id")
+      ON UPDATE restrict ON DELETE restrict, FOREIGN KEY ("created_by") REFERENCES
+      "public"."user"("user_id") ON UPDATE restrict ON DELETE restrict, FOREIGN KEY
+      ("last_updated_by") REFERENCES "public"."user"("user_id") ON UPDATE restrict
+      ON DELETE restrict, UNIQUE ("answer_choice_id"));
+  type: run_sql
+- args:
+    name: answer_choice
+    schema: public
+  type: add_existing_table_or_view

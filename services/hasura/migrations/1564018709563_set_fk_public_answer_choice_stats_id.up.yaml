@@ -1,0 +1,7 @@
+- args:
+    sql:
+      "\n           alter table \"public\".\"answer_choice\"\n           add constraint
+      \"answer_choice_stats_id_fkey\" \n           foreign key (\"stats_id\") \n           references
+      \"public\".\"answer_stats\"\n           (\"id\") on update restrict on delete
+      restrict;\n      "
+  type: run_sql

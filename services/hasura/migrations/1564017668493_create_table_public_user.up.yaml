@@ -1,0 +1,12 @@
+- args:
+    sql:
+      CREATE TABLE "public"."user"("id" serial NOT NULL, "username" text NOT NULL,
+      "firstname" text NOT NULL, "lastname" text NOT NULL, "email" text NOT NULL,
+      "password" text NOT NULL, "type_id" integer NOT NULL, "score" integer NOT NULL,
+      "stats_id" integer NOT NULL, "avatar_url" text NOT NULL, "created_at" timestamptz
+      NOT NULL, "last_connected_at" timestamptz NOT NULL, PRIMARY KEY ("id") );
+  type: run_sql
+- args:
+    name: user
+    schema: public
+  type: add_existing_table_or_view

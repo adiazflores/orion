@@ -1,0 +1,8 @@
+- args:
+    name: answer_template
+    table:
+      name: answer_choice
+      schema: public
+    using:
+      foreign_key_constraint_on: answer_template_id
+  type: create_object_relationship

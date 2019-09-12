@@ -1,0 +1,6 @@
+- args:
+    sql: ALTER TABLE "public"."user_stats" ADD COLUMN "time_spent" interval
+  type: run_sql
+- args:
+    sql: ALTER TABLE "public"."user_stats" ALTER COLUMN "time_spent" DROP NOT NULL
+  type: run_sql

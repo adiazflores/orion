@@ -1,0 +1,18 @@
+version: '3'
+services:
+  postgres:
+    image: postgres:latest
+    restart: always
+    volumes:
+      - db_data:/var/lib/postgresql/data
+  graphql-engine:
+    image: hasura/graphql-engine:v1.0.0-beta.4
+    ports:
+      - '80:80'
+    restart: always
+    env_file:
+      - ./.env
+    command:
+      ['graphql-engine', 'serve', '--server-port', '80', '--enable-console']
+volumes:
+  db_data:
